@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="form.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="style.css" media="screen">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,18 +14,26 @@
 
     <title>Meu Credere | Formulário</title>
 
+    <script defer src="form.js"></script>
+
 </head>
 
 <body>
 
     <header>
 
-        <h1>Meu Credere</h1>
-
         <nav>
-            <a href="">Início</a>
-            <a href="">Cadastrar Cliente</a>
-            <a href="">Clientes</a>
+
+            <div class="logo">
+                <img src="/assets/logo.svg" alt="Logotipo Credere"> 
+            </div>
+
+            <div class="links">
+                <a href="/index.html">Início</a>
+                <a href="/form.html">Cadastrar Cliente</a>
+                <a href="/costumer.html">Clientes</a>
+            </div>
+
         </nav>
 
     </header>
@@ -65,13 +73,13 @@
 
                     <div>
                         <label for="costumer-driver-license-number">Carteira de Motorista</label>
-                        <input onchange="showCityField()" id="driverLicense-input" type="text"
+                        <input oninput="showCityField()" id="driverLicense-input" type="text"
                             name="costumer-driver-license-number" placeholder="Número da carteira">
                     </div>
 
                     <div>
-                        <label for="costumer-driverlicense-date">Data de emissão</label>
-                        <input type="date" name="costumer-driverlicense-date">
+                        <label for="costumer-driver-license-date">Data de emissão</label>
+                        <input type="date" name="costumer-driver-license-date">
                     </div>
 
                 </div>
@@ -85,16 +93,36 @@
                         </div>
 
                         <select onchange="showCityField()" id="select-state" name="costumer-state" required>
+
                             <option value="" disabled selected>Selecione o estado</option>
                             <option value="RN">Rio Grande do Norte</option>
-                            <option value="MA">Maranhão</option>
-                            <option value="PI">Piauí</option>
-                            <option value="CE">Ceará</option>
-                            <option value="PB">Paraíba</option>
-                            <option value="PE">Pernambuco</option>
-                            <option value="AL">Alagoas</option>
-                            <option value="SE">Sergipe</option>
+                            <option value="AC">Acre</option>
+                            <option value="AL">lagoas</option>
+                            <option value="AP">Amapá</option>
+                            <option value="AM">Amazonas</option>
                             <option value="BA">Bahia</option>
+                            <option value="CE">Ceará</option>
+                            <option value="DF">Distrito Federal</option>
+                            <option value="ES">Espírito Santo</option>
+                            <option value="GO">Goiás</option>
+                            <option value="MA">Maranhão</option>
+                            <option value="MT">Mato Grosso</option>
+                            <option value="MS">Mato Grosso do Sul</option>
+                            <option value="MG">Minas Gerais</option>
+                            <option value="PA">Pará</option>
+                            <option value="PB">Paraíba</option>
+                            <option value="PR">Paraná</option>
+                            <option value="PE">Pernambuco</option>
+                            <option value="PI">Piauí</option>
+                            <option value="RJ">Rio de Janeiro</option>
+                            <option value="RS">Rio Grande do Sul</option>
+                            <option value="RO">Rondônia</option>	
+                            <option value="RR">Roraima</option>		
+                            <option value="SC">Santa Catarina</option>			
+                            <option value="SP">São Paulo</option>
+                            <option value="SE">Sergipe</option>
+                            <option value="TO">Tocantins</option>	
+
                         </select>
 
                     </div>
@@ -113,112 +141,124 @@
 
                 <div class="phone-field">
 
-                    <div id="phone-number-1">
+                    <table>
 
-                        <div>
-                            <label for="costumer-phone-1">Telefone</label>
-                        </div>
+                        <tr>
+                          <th>Telefone</th>
+                          <th>Telefone Principal</th>
+                          <th>Modificar</th>
+                        </tr>
 
-                        <div>
-                            <input type="tel" name="costumer-phone-1" placeholder="DDD e número" required>
-                            <input type="checkbox" id="important-number">
-                            <img src="/assets/plus.svg" alt="" width="20" height="20" onclick="showMorePhoneFields()">
-                        </div>
+                        <tr id="phone-number-1">
+                            <td>
+                              <input type="tel" oninput="formatPhoneNumber( document.getElementsByName('costumer-phone-1') )" name="costumer-phone-1" placeholder="DDD e número" required>
+                            </td>
 
-                    </div>
+                            <td>
+                              <input type="checkbox" onclick="checkPhoneBox(1)" id="important-number-1" checked>
+                            </td>
 
-                    <div id="phone-number-2" class="phone-class">
+                            <td>
+                              <img src="/assets/plus.svg" alt="" width="20" height="20" onclick="showMorePhoneFields()">
+                            </td>
+                        </tr>
 
-                        <div>
-                            <label for="costumer-phone-2">Telefone</label>
-                        </div>
+                        <tr id="phone-number-2">
+                            <td>
+                                <input type="tel" oninput="formatPhoneNumber( document.getElementsByName('costumer-phone-2') )" name="costumer-phone-2" placeholder="DDD e número">
+                            </td>
 
-                        <div>
+                            <td>
+                                <input type="checkbox" onclick="checkPhoneBox(2)" id="important-number-2">
+                            </td>
 
-                            <input type="tel" name="costumer-phone-2" placeholder="DDD e número">
-                            <input type="checkbox" id="important-number">
-                            <img src="/assets/minus.svg" alt="" width="20" height="20" onclick="removePhoneFields(2)">
+                            <td>
+                                <img src="/assets/minus.svg" alt="" width="20" height="20" onclick="removePhoneFields(2)">
+                            </td>
+                        </tr>
 
-                        </div>
+                        <tr id="phone-number-3">
 
-                    </div>
+                            <td>
+                                <input type="tel" oninput="formatPhoneNumber( document.getElementsByName('costumer-phone-3') )" name="costumer-phone-3" placeholder="DDD e número">
+                            </td>
 
-                    <div id="phone-number-3" class="phone-class">
+                            <td> 
+                                <input type="checkbox" onclick="checkPhoneBox(3)" id="important-number-3">
+                            </td>
 
-                        <div>
-                            <label for="costumer-phone-3">Telefone</label>
-                        </div>
+                            <td>
+                                <img src="/assets/minus.svg" alt="" width="20" height="20" onclick="removePhoneFields(3)">
+                            </td>
 
-                        <div>
+                        </tr>
 
-                            <input type="tel" name="costumer-phone-3" placeholder="DDD e número">
-                            <input type="checkbox" id="important-number">
-                            <img src="/assets/minus.svg" alt="" width="20" height="20" onclick="removePhoneFields(3)">
+                        <tr id="phone-number-4">
 
-                        </div>
+                            <td>
+                                <input type="tel" oninput="formatPhoneNumber( document.getElementsByName('costumer-phone-4') )" name="costumer-phone-4" placeholder="DDD e número">
+                            </td>
 
-                    </div>
+                            <td>
+                                <input type="checkbox" onclick="checkPhoneBox(4)" id="important-number-4">
+                            </td>
 
-                    <div id='phone-number-4' class="phone-class">
+                            <td>
+                                <img src="/assets/minus.svg" alt="" width="20" height="20" onclick="removePhoneFields(4)">
+                            </td>
 
-                        <div>
-                            <label for="costumer-phone-4">Telefone</label>
-                        </div>
+                        </tr>
 
-                        <div>
-                            <input type="tel" name="costumer-phone-4" placeholder="DDD e número">
-                            <input type="checkbox" id="important-number">
-                            <img src="/assets/minus.svg" alt="" width="20" height="20" onclick="removePhoneFields(4)">
-                        </div>
-
-                    </div>
+                    </table>
 
                 </div>
 
                 <div class="email-field">
 
-                    <div id="email-1">
+                    <table>
 
-                        <div>
-                            <label for="costumer-email-1">Email</label>
-                        </div>
+                        <tr>
+                          <th>Email</th>
+                          <th>Modificar</th>
+                        </tr>
 
-                        <div>
-                            <input type="email" name="costumer-email-1" required>
-                            <img src="/assets/plus.svg" alt="" width="20" height="20" onclick="showMoreEmailFields()">
-                        </div>
+                        <tr id="email-1">
 
-                    </div>
+                            <td>
+                                <input type="email" name="costumer-email-1" placeholder="exemplo@gmail.com" required>  
+                            </td>
 
-                    <div id="email-2">
+                            <td>
+                                <img src="/assets/plus.svg" alt="" width="20" height="20" onclick="showMoreEmailFields()">
+                            </td>
+                            
+                        </tr>
 
-                        <div>
-                            <label for="costumer-email-2">Email</label>
-                        </div>
+                        <tr id="email-2">
 
-                        <div>
+                            <td>
+                                <input type="email" name="costumer-email-2"  placeholder="exemplo@gmail.com">
+                            </td>
 
-                            <input type="tel" name="costumer-email-2">
-                            <img src="/assets/minus.svg" alt="" width="20" height="20" onclick="removeEmailFields(2)">
+                            <td>
+                                <img src="/assets/minus.svg" alt="" width="20" height="20" onclick="removeEmailFields(2)">
+                            </td>
+                            
+                        </tr>
 
-                        </div>
+                        <tr id="email-3">
 
-                    </div>
+                            <td>
+                                <input type="tel" name="costumer-email-3"  placeholder="exemplo@gmail.com">
+                            </td>
 
-                    <div id="email-3">
+                            <td>
+                                <img src="/assets/minus.svg" alt="" width="20" height="20" onclick="removeEmailFields(3)">
+                            </td>
+                            
+                        </tr>
 
-                        <div>
-                            <label for="costumer-email-3">Email</label>
-                        </div>
-
-                        <div>
-
-                            <input type="tel" name="costumer-email-3">
-                            <img src="/assets/minus.svg" alt="" width="20" height="20" onclick="removeEmailFields(3)">
-
-                        </div>
-
-                    </div>
+                    </table>
 
                 </div>
 
@@ -237,12 +277,14 @@
                     </div>
 
                     <div>
-                        <input type="tel" name="costumer-sponsor-phone" placeholder="DDD e número">
+                        <input type="tel" oninput="formatPhoneNumber( document.getElementsByName('costumer-sponsor-phone') )" name="costumer-sponsor-phone" placeholder="DDD e número">
                     </div>
 
                 </div>
 
-                <button id="button">Salvar Cliente</button>
+                <div class="center">
+                    <button id="button">Salvar Cliente</button>
+                </div>
 
             </form>
 
@@ -250,237 +292,24 @@
 
     </main>
 
-    <script>
+    <footer>
 
-        // [ ] Adicionar loop interativo nas divs de Telefone pra checar qual é o número principal de telefone do cliente
-        // [X] Puxar as informações do submit e dar console.log
-        // [ ] A array de salvar o cliente precisa ter prefixos: Nome, DataNascimento, Estado
-        // [ ] Banco de Dados local no navegador para a gente ver a lista de clientes cadastrados e editar o cadastro
-        // [ ]
+        <hr>
 
-        const phoneFields = [
+        <div>
 
-            [document.getElementById('phone-number-1'), true],
-            [document.getElementById('phone-number-2'), false],
-            [document.getElementById('phone-number-3'), false],
-            [document.getElementById('phone-number-4'), false]
+            <span>
+                © 2022 Credere
+            </span>
+            <span>
+                Criado por HenriqueSilv4
+            </span>
 
-        ];
 
-        const emailFields = [
+        </div>
 
-            [document.getElementById('email-1'), true],
-            [document.getElementById('email-2'), false],
-            [document.getElementById('email-3'), false]
 
-        ];
-
-        document.getElementById('license-field-id').style.display = 'none'
-        document.getElementById('costumer-city-field').style.display = 'none'
-
-        document.getElementById('phone-number-2').style.display = 'none'
-        document.getElementById('phone-number-3').style.display = 'none'
-        document.getElementById('phone-number-4').style.display = 'none'
-
-        document.getElementById('constumer-sponsor-id').style.display = 'none'
-
-        document.getElementById('email-2').style.display = 'none'
-        document.getElementById('email-3').style.display = 'none'
-
-        function createCostumerProfile(event){
-
-            event.preventDefault();
-
-            costumerProfile = [];
-
-            costumerProfile.push( document.getElementsByName("costumer-name")[0].value )
-            costumerProfile.push( document.getElementsByName("costumer-birth")[0].value )
-            costumerProfile.push( document.getElementsByName("costumer-driver-license-number")[0].value )
-            costumerProfile.push( document.getElementsByName("costumer-driverlicense-date")[0].value )
-            costumerProfile.push( document.getElementsByName("costumer-state")[0].value )
-
-            console.table( costumerProfile )
-
-
-        }
-
-        /* 
-        costumer-name=Henrique+Lacerda
-        costumer-birth=2006-03-18
-        cliente-carteira-motorista=
-        costumer-driverlicense-date=
-        costumer-state=RN
-        costumer-city=
-        &costumer-phone-1=65454546465
-        &costumer-phone-2=
-        &costumer-phone-3=
-        &costumer-phone-4=
-        &costumer-email-1=dadada%40dadada
-        &costumer-email-2=
-        &costumer-email-3=
-        &costumer-sponsor-name=Stenio
-        &costumer-sponsor-phone=65454546465
-
-        */
-
-        function removeEmailFields(emailField) {
-
-            switch (emailField) {
-
-                case 2: {
-
-                    emailFields[1][0].style.display = 'none';
-                    emailFields[1][1] = false;
-                    break;
-                }
-
-                case 3: {
-
-                    emailFields[2][0].style.display = 'none';
-                    emailFields[2][1] = false;
-                    break;
-                }
-
-                default: {
-                    alert('Erro encontrado na função removeEmailFields')
-                }
-
-            }
-
-        }
-
-        function showMoreEmailFields() {
-
-            for (let i = 0; i < emailFields.length; i++) {
-
-                if (emailFields[i][1] === false) {
-
-                    emailFields[i][0].style.display = 'block'
-                    emailFields[i][1] = true
-                    break;
-
-                }
-
-            };
-
-        }
-
-        function showMorePhoneFields() {
-
-            for (let i = 0; i < phoneFields.length; i++) {
-
-                if (phoneFields[i][1] === false) {
-
-                    phoneFields[i][0].style.display = 'block'
-                    phoneFields[i][1] = true
-                    break;
-
-                }
-
-            };
-
-        }
-
-        function removePhoneFields(phoneNumber) {
-
-            console.log(phoneNumber)
-
-            switch (phoneNumber) {
-
-                case 2: {
-
-                    phoneFields[1][0].style.display = 'none';
-                    phoneFields[1][1] = false;
-                    break;
-                }
-
-                case 3: {
-
-                    phoneFields[2][0].style.display = 'none';
-                    phoneFields[2][1] = false;
-                    break;
-                }
-
-                case 4: {
-
-                    phoneFields[3][0].style.display = 'none';
-                    phoneFields[3][1] = false;
-                    break;
-                }
-
-                default: {
-                    alert('Erro encontrado na função removePhoneField')
-                }
-
-            }
-
-        }
-
-        function showCityField() {
-
-            let licenseNumber = document.getElementById('driverLicense-input').value
-            let costumerState = document.getElementById('select-state').value
-
-            if (licenseNumber.startsWith("6") && costumerState === 'RN') {
-
-                document.getElementById('costumer-city-field').style.display = 'grid'
-
-            } else {
-
-                document.getElementById('costumer-city-field').style.display = 'none'
-
-            }
-
-        }
-
-        function getAge() {
-
-            var formDate = document.getElementById('birth-field').value.split("-");
-
-            //console.log('O ano do form é :' + formDate[0])
-            //console.log('O ano atual é:' + new Date().getFullYear() )
-
-            var year = new Date().getFullYear()
-
-            if (formDate[0] > year) {
-                alert('Você colocou uma data superior ao nosso ano atual')
-                return false
-            }
-
-            if (formDate[0] >= 1900) {
-
-            } else {
-
-                document.getElementById('license-field-id').style.display = 'none'
-                return false
-
-            }
-
-            if (year - formDate[0] >= 18) {
-
-                document.getElementById('license-field-id').style.display = 'flex'
-                document.getElementById('license-field-id').style.visibility = 'visible'
-
-            } else {
-
-                document.getElementById('license-field-id').style.display = 'none'
-
-            }
-
-            if (year - formDate[0] < 18) {
-
-                document.getElementById('constumer-sponsor-id').style.display = 'grid'
-                document.getElementById('constumer-sponsor-id').style.visibility = 'visible'
-
-            } else {
-
-                document.getElementById('constumer-sponsor-id').style.display = 'none'
-
-            }
-
-        }
-
-    </script>
+    </footer>
 
 </body>
 
