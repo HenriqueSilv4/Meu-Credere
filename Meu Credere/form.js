@@ -8,9 +8,10 @@
 //[X] Puxar as informações do submit e dar console.log
 //[X] Adicionado fade-in em todas as janelas que são pedidos só quando necessario
 //[X] Campo Carteira de motorista rodava a função ShowCityField como OnChange (So mostrava a aba de cidade ao clicar fora do input), agora uso a funcao OnInput para rodar a funcao em tempo real
-
-// [ ] A array de salvar o cliente precisa ter prefixos: Nome, DataNascimento, Estado
-// [ ] Banco de Dados local no navegador para a gente ver a lista de clientes cadastrados e editar o cadastro
+//[X] Adicionado validação no input date para nascimento para checar a data minima para 01-01-1900
+//[X] Adicionado uma animação leve de background color nos inputs de email e telefone ao serem adicionados e removidos
+//[X] A array de salvar o cliente precisa ter prefixos: Nome, DataNascimento, Estado
+//[x] Banco de Dados local no navegador para a gente ver a lista de clientes cadastrados
 
 document.getElementById('license-field-id').style.display = 'none'
 document.getElementById('costumer-city-field').style.display = 'none'
@@ -175,8 +176,15 @@ function removeEmailFields(emailField) {
 
             document.getElementsByName("costumer-email-2")[0].required = false
             document.getElementsByName("costumer-email-2")[0].value = ''
-            emailFields[1]['div'].style.display = 'none';
-            emailFields[1]['showDiv'] = false;
+            emailFields[1]['showDiv'] = false
+
+            emailFields[1]['div'].style.backgroundColor = '#ff000080'
+
+            window.setTimeout(function () {
+                emailFields[1]['div'].style.opacity = 0
+                emailFields[1]['div'].style.display = 'none'
+            }, 250);
+
             break;
 
         }
@@ -185,8 +193,15 @@ function removeEmailFields(emailField) {
 
             document.getElementsByName("costumer-email-3")[0].required = false
             document.getElementsByName("costumer-email-3")[0].value = ''
-            emailFields[2]['div'].style.display = 'none';
             emailFields[2]['showDiv'] = false;
+
+            emailFields[2]['div'].style.backgroundColor = '#ff000080';
+
+            window.setTimeout(function () {
+                emailFields[2]['div'].style.opacity = 0;
+                emailFields[2]['div'].style.display = 'none';
+            }, 250);
+
             break;
 
         }
@@ -208,9 +223,12 @@ function showMoreEmailFields() {
             emailFields[i]['div'].style.display = 'table-row'
             emailFields[i]['showDiv'] = true
             emailFields[i]['email-input'][0].required = true
+            emailFields[i]['div'].style.backgroundColor = '#00ff0080';
+
             window.setTimeout(function () {
                 emailFields[i]['div'].style.opacity = 1;
-            }, 50);
+                emailFields[i]['div'].style.backgroundColor = 'transparent';
+            }, 250);
             break;
 
         }
@@ -228,10 +246,13 @@ function showMorePhoneFields() {
             phoneFields[i]['div'].style.display = 'table-row'
             phoneFields[i]['showDiv'] = true
             phoneFields[i]['phone-input'][0].required = true
+            phoneFields[i]['div'].style.backgroundColor = '#00ff0080';
 
             window.setTimeout(function () {
                 phoneFields[i]['div'].style.opacity = 1;
-            }, 50);
+                phoneFields[i]['div'].style.backgroundColor = 'transparent';
+            }, 250);
+            
             break;
 
         }
@@ -247,27 +268,46 @@ function removePhoneFields(phoneNumber) {
         case 2: {
             document.getElementsByName("costumer-phone-2")[0].required = false
             document.getElementsByName("costumer-phone-2")[0].value = ''
-            phoneFields[1]['div'].style.display = 'none';
-            phoneFields[1]['div'].style.opacity = 0;
             phoneFields[1]['showDiv'] = false;
+
+            phoneFields[1]['div'].style.backgroundColor = '#ff000080';
+
+            window.setTimeout(function () {
+                phoneFields[1]['div'].style.opacity = 0;
+                phoneFields[1]['div'].style.display = 'none';
+            }, 250);
+
+
             break;
         }
 
         case 3: {
             document.getElementsByName("costumer-phone-3")[0].required = false
             document.getElementsByName("costumer-phone-3")[0].value = ''
-            phoneFields[2]['div'].style.display = 'none';
-            phoneFields[2]['div'].style.opacity = 0;
             phoneFields[2]['showDiv'] = false;
+
+            phoneFields[2]['div'].style.backgroundColor = '#ff000080';
+
+            window.setTimeout(function () {
+                phoneFields[2]['div'].style.opacity = 0;
+                phoneFields[2]['div'].style.display = 'none';
+            }, 250);
+
             break;
         }
 
         case 4: {
             document.getElementsByName("costumer-phone-4")[0].required = false
             document.getElementsByName("costumer-phone-4")[0].value = ''
-            phoneFields[3]['div'].style.display = 'none';
-            phoneFields[3]['div'].style.opacity = 0;
             phoneFields[3]['showDiv'] = false;
+
+            phoneFields[3]['div'].style.backgroundColor = '#ff000080';
+
+            window.setTimeout(function () {
+                phoneFields[3]['div'].style.opacity = 0;
+                phoneFields[3]['div'].style.display = 'none';
+            }, 250);
+
             break;
         }
 
@@ -321,14 +361,20 @@ function showCityField() {
     if (licenseNumber.startsWith("6") && costumerState === 'RN') {
 
         document.getElementById('costumer-city-field').style.display = 'grid'
+        document.getElementById('costumer-city-field').style.backgroundColor = '#00ff0080'
         document.getElementsByName("costumer-city")[0].required = true
+
+        window.setTimeout(function () {
+            document.getElementById('costumer-city-field').style.opacity = 1
+            document.getElementById('costumer-city-field').style.backgroundColor = 'transparent'
+        }, 250);
 
     } else {
 
         document.getElementById('costumer-city-field').style.display = 'none'
         document.getElementsByName("costumer-city")[0].required = false
         document.getElementsByName("costumer-city")[0].value = ''
-
+        document.getElementById('costumer-city-field').style.opacity = 0;
     }
 
 }
@@ -362,13 +408,15 @@ function getAge() {
 
         document.getElementById('license-field-id').style.display = 'flex'
         document.getElementById('license-field-id').style.visibility = 'visible'
+        document.getElementById('license-field-id').style.backgroundColor = '#00ff0080'
 
         document.getElementsByName("costumer-driver-license-number")[0].required = true
         document.getElementsByName("costumer-driver-license-date")[0].required = true
 
         window.setTimeout(function () {
             document.getElementById('license-field-id').style.opacity = 1;
-        }, 50);
+            document.getElementById('license-field-id').style.backgroundColor = 'transparent'
+        }, 250);
 
     } else {
 
@@ -386,14 +434,17 @@ function getAge() {
 
         document.getElementById('constumer-sponsor-id').style.display = 'grid'
         document.getElementById('constumer-sponsor-id').style.visibility = 'visible'
+        document.getElementById('constumer-sponsor-id').style.backgroundColor = '#00ff0080';
 
         window.setTimeout(function () {
             document.getElementById('constumer-sponsor-id').style.opacity = 1;
-        }, 50);
+            document.getElementById('constumer-sponsor-id').style.backgroundColor = 'transparent';
+        }, 250);
 
     } else {
 
         document.getElementById('constumer-sponsor-id').style.display = 'none'
+        document.getElementById('constumer-sponsor-id').style.opacity = 0;
 
     }
 
