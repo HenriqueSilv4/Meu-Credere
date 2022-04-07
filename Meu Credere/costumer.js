@@ -35,13 +35,8 @@ const DOM = {
         <td>${costumer.sponsor_phone}</td>`;
 
         return html;
-    },
-
-    clearCostumers() {
-
-        DOM.costumersContainer.innerHTML = "";
-
     }
+
 }
 
 const Storage = {
@@ -50,13 +45,8 @@ const Storage = {
 
         return JSON.parse(localStorage.getItem("meuCredere:costumers")) || [];
 
-    },
-
-    set(costumer) {
-
-        localStorage.setItem("meuCredere:costumers", JSON.stringify(costumer));
-
     }
+
 }
 
 const Costumers = {

@@ -1,0 +1,30 @@
+[   
+    {
+        "titulo": "LOREM IPSUM?",
+        "descricao": "Simply dummy text of the printing and typesetting industry",
+        "noticia": "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when a unknown printer took a gallery of type and scrambled it.",
+        "background": "paisagem1.png"
+    },
+
+    {
+        "titulo": "WHY DO WE USE IT?",
+        "descricao": "",
+        "noticia": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+        "background": "paisagem2.png"
+    },
+
+    {
+        "titulo": "WHERE DOES IT COME FROM?",
+        "descricao": "",
+        "noticia": "Contrary to popular belief, Lorem Ipsum is not a random text.",
+        "background": "paisagem3.png"
+    },
+
+    {
+        "titulo": "WHERE CAN I GET SOME?",
+        "descricao": "",
+        "noticia": "There are many variations of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slighly believable. The Generated Lorem Ipsum is therefore always free from repetition.",
+        "background": "paisagem4.png"
+    }
+
+]

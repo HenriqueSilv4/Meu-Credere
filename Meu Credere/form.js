@@ -1,18 +1,3 @@
-//[X] Adicionado todos os estados brasileiros no Select - Estados
-//[X] PhoneNumberFields e EmailFields agora tem uma construção mais semantica usando javascript Array + Objects
-//[X] A Div phone-fields agora é uma tabela com elementos internos para mais organização.
-//[X] Inputs escondidos não retorna valores ao final do submit e estão sempre com required false
-//[X] Inputs mostrados ao usuario tera um valor required true
-//[X] Adicionado formatação para inputs de telefone com (DDD) + XXXXX-XXXX
-//[X] Adicionado sistema inteligente de checagem [CheckBox] de numero principal na table Telefones
-//[X] Puxar as informações do submit e dar console.log
-//[X] Adicionado fade-in em todas as janelas que são pedidos só quando necessario
-//[X] Campo Carteira de motorista rodava a função ShowCityField como OnChange (So mostrava a aba de cidade ao clicar fora do input), agora uso a funcao OnInput para rodar a funcao em tempo real
-//[X] Adicionado validação no input date para nascimento para checar a data minima para 01-01-1900
-//[X] Adicionado uma animação leve de background color nos inputs de email e telefone ao serem adicionados e removidos
-//[X] A array de salvar o cliente precisa ter prefixos: Nome, DataNascimento, Estado
-//[x] Banco de Dados local no navegador para a gente ver a lista de clientes cadastrados
-
 document.getElementById('license-field-id').style.display = 'none'
 document.getElementById('costumer-city-field').style.display = 'none'
 
@@ -91,6 +76,8 @@ function createCostumerProfile(event) {
     costumerProfile['phone_3'] = document.getElementsByName("costumer-phone-3")[0].value
     costumerProfile['phone_4'] = document.getElementsByName("costumer-phone-4")[0].value
 
+    //ADicionar aqui o telefone principal marcado pelo check box
+
     costumerProfile['email_1'] = document.getElementsByName("costumer-email-1")[0].value
     costumerProfile['email_2'] = document.getElementsByName("costumer-email-2")[0].value
     costumerProfile['email_3'] = document.getElementsByName("costumer-email-3")[0].value
@@ -113,58 +100,6 @@ function checkPhoneBox(boxID) {
     document.getElementById('important-number-4').checked = false;
 
     document.getElementById('important-number-' + boxID).checked = true;
-
-    /*
-
-    switch (boxID) {
-
-        case 1: {
-
-            document.getElementById('important-number-' + boxID).checked = true;
-            document.getElementById('important-number-2').checked = false;
-            document.getElementById('important-number-3').checked = false;
-            document.getElementById('important-number-4').checked = false;
-            break;
-
-        }
-
-        case 2: {
-
-            document.getElementById('important-number-1').checked = false;
-            document.getElementById('important-number-2').checked = true;
-            document.getElementById('important-number-3').checked = false;
-            document.getElementById('important-number-4').checked = false;
-            break;
-
-        }
-
-        case 3: {
-
-            document.getElementById('important-number-1').checked = false;
-            document.getElementById('important-number-2').checked = false;
-            document.getElementById('important-number-3').checked = true;
-            document.getElementById('important-number-4').checked = false;
-            break;
-
-        }
-
-        case 4: {
-
-            document.getElementById('important-number-1').checked = false;
-            document.getElementById('important-number-2').checked = false;
-            document.getElementById('important-number-3').checked = false;
-            document.getElementById('important-number-4').checked = true;
-            break;
-
-        }
-
-        default: {
-            alert('Erro encontrado na função removeEmailFields')
-        }
-
-    }
-
-    */
 
 }
 
