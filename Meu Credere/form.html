@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="form.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="./styles/form.css" media="screen">
     <link rel="icon" href="/assets/icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,7 +15,7 @@
 
     <title>Meu Credere | Cadastrar Cliente</title>
 
-    <script defer src="form.js"></script>
+    <script defer src="./scripts/form.js"></script>
 
 </head>
 
@@ -26,7 +26,7 @@
         <nav>
 
             <div class="logo">
-                <img src="/assets/logo.svg" alt="Logotipo Credere"> 
+                <img src="/assets/logo.svg" alt="Logotipo Credere">
             </div>
 
             <div class="links">
@@ -38,7 +38,7 @@
         </nav>
 
     </header>
-    
+
     <main>
 
         <section>
@@ -70,7 +70,7 @@
 
                 </div>
 
-                <div class="license-field" id='license-field-id'>
+                <div class="license-field hide" id='license-field-id'>
 
                     <div>
                         <label for="costumer-driver-license-number">Carteira de Motorista</label>
@@ -117,18 +117,18 @@
                             <option value="PI">Piauí</option>
                             <option value="RJ">Rio de Janeiro</option>
                             <option value="RS">Rio Grande do Sul</option>
-                            <option value="RO">Rondônia</option>	
-                            <option value="RR">Roraima</option>		
-                            <option value="SC">Santa Catarina</option>			
+                            <option value="RO">Rondônia</option>
+                            <option value="RR">Roraima</option>
+                            <option value="SC">Santa Catarina</option>
                             <option value="SP">São Paulo</option>
                             <option value="SE">Sergipe</option>
-                            <option value="TO">Tocantins</option>	
+                            <option value="TO">Tocantins</option>
 
                         </select>
 
                     </div>
 
-                    <div id="costumer-city-field">
+                    <div class='hide' id="costumer-city-field">
 
                         <div>
                             <label for="costumer-city">Cidade</label>
@@ -145,28 +145,33 @@
                     <table>
 
                         <tr>
-                          <th>Telefone</th>
-                          <th>Telefone Principal</th>
-                          <th>Modificar</th>
+                            <th>Telefone</th>
+                            <th>Telefone Principal</th>
+                            <th>Modificar</th>
                         </tr>
 
                         <tr id="phone-number-1">
                             <td>
-                              <input type="tel" oninput="formatPhoneNumber( document.getElementsByName('costumer-phone-1') )" name="costumer-phone-1" placeholder="DDD e número" required>
+                                <input type="tel"
+                                    oninput="formatPhoneNumber( document.getElementsByName('costumer-phone-1') )"
+                                    name="costumer-phone-1" placeholder="DDD e número" required>
                             </td>
 
                             <td>
-                              <input type="checkbox" onclick="checkPhoneBox(1)" id="important-number-1" checked>
+                                <input type="checkbox" onclick="checkPhoneBox(1)" id="important-number-1" checked>
                             </td>
 
                             <td>
-                              <img src="/assets/plus.svg" alt="" width="20" height="20" onclick="showMorePhoneFields()">
+                                <img src="/assets/plus.svg" alt="" width="20" height="20"
+                                    onclick="showMorePhoneFields()">
                             </td>
                         </tr>
 
-                        <tr id="phone-number-2">
+                        <tr class='hide' id="phone-number-2">
                             <td>
-                                <input type="tel" oninput="formatPhoneNumber( document.getElementsByName('costumer-phone-2') )" name="costumer-phone-2" placeholder="DDD e número">
+                                <input type="tel"
+                                    oninput="formatPhoneNumber( document.getElementsByName('costumer-phone-2') )"
+                                    name="costumer-phone-2" placeholder="DDD e número">
                             </td>
 
                             <td>
@@ -174,30 +179,36 @@
                             </td>
 
                             <td>
-                                <img src="/assets/minus.svg" alt="" width="20" height="20" onclick="removePhoneFields(2)">
+                                <img src="/assets/minus.svg" alt="" width="20" height="20"
+                                    onclick="removePhoneFields(2)">
                             </td>
                         </tr>
 
-                        <tr id="phone-number-3">
+                        <tr class='hide' id="phone-number-3">
 
                             <td>
-                                <input type="tel" oninput="formatPhoneNumber( document.getElementsByName('costumer-phone-3') )" name="costumer-phone-3" placeholder="DDD e número">
+                                <input type="tel"
+                                    oninput="formatPhoneNumber( document.getElementsByName('costumer-phone-3') )"
+                                    name="costumer-phone-3" placeholder="DDD e número">
                             </td>
 
-                            <td> 
+                            <td>
                                 <input type="checkbox" onclick="checkPhoneBox(3)" id="important-number-3">
                             </td>
 
                             <td>
-                                <img src="/assets/minus.svg" alt="" width="20" height="20" onclick="removePhoneFields(3)">
+                                <img src="/assets/minus.svg" alt="" width="20" height="20"
+                                    onclick="removePhoneFields(3)">
                             </td>
 
                         </tr>
 
-                        <tr id="phone-number-4">
+                        <tr class='hide' id="phone-number-4">
 
                             <td>
-                                <input type="tel" oninput="formatPhoneNumber( document.getElementsByName('costumer-phone-4') )" name="costumer-phone-4" placeholder="DDD e número">
+                                <input type="tel"
+                                    oninput="formatPhoneNumber( document.getElementsByName('costumer-phone-4') )"
+                                    name="costumer-phone-4" placeholder="DDD e número">
                             </td>
 
                             <td>
@@ -205,7 +216,8 @@
                             </td>
 
                             <td>
-                                <img src="/assets/minus.svg" alt="" width="20" height="20" onclick="removePhoneFields(4)">
+                                <img src="/assets/minus.svg" alt="" width="20" height="20"
+                                    onclick="removePhoneFields(4)">
                             </td>
 
                         </tr>
@@ -219,51 +231,54 @@
                     <table>
 
                         <tr>
-                          <th>Email</th>
-                          <th>Modificar</th>
+                            <th>Email</th>
+                            <th>Modificar</th>
                         </tr>
 
-                        <tr id="email-1">
+                        <tr class='show' id="email-1">
 
                             <td>
-                                <input type="email" name="costumer-email-1" placeholder="exemplo@gmail.com" required>  
+                                <input type="email" name="costumer-email-1" placeholder="exemplo@gmail.com" required>
                             </td>
 
                             <td>
-                                <img src="/assets/plus.svg" alt="" width="20" height="20" onclick="showMoreEmailFields()">
+                                <img src="/assets/plus.svg" alt="" width="20" height="20"
+                                    onclick="showMoreEmailFields()">
                             </td>
-                            
+
                         </tr>
 
-                        <tr id="email-2">
+                        <tr class='hide' id="email-2">
 
                             <td>
-                                <input type="email" name="costumer-email-2"  placeholder="exemplo@gmail.com">
+                                <input type="email" name="costumer-email-2" placeholder="exemplo@gmail.com">
                             </td>
 
                             <td>
-                                <img src="/assets/minus.svg" alt="" width="20" height="20" onclick="removeEmailFields(2)">
+                                <img src="/assets/minus.svg" alt="" width="20" height="20"
+                                    onclick="removeEmailFields(2)">
                             </td>
-                            
+
                         </tr>
 
-                        <tr id="email-3">
+                        <tr class='hide' id="email-3">
 
                             <td>
-                                <input type="tel" name="costumer-email-3"  placeholder="exemplo@gmail.com">
+                                <input type="tel" name="costumer-email-3" placeholder="exemplo@gmail.com">
                             </td>
 
                             <td>
-                                <img src="/assets/minus.svg" alt="" width="20" height="20" onclick="removeEmailFields(3)">
+                                <img src="/assets/minus.svg" alt="" width="20" height="20"
+                                    onclick="removeEmailFields(3)">
                             </td>
-                            
+
                         </tr>
 
                     </table>
 
                 </div>
 
-                <div class="costumer-sponsor" id="constumer-sponsor-id">
+                <div class="costumer-sponsor hide" id="costumer-sponsor-id">
 
                     <h4>Responsável</h4>
 
@@ -278,7 +293,9 @@
                     </div>
 
                     <div>
-                        <input type="tel" oninput="formatPhoneNumber( document.getElementsByName('costumer-sponsor-phone') )" name="costumer-sponsor-phone" placeholder="DDD e número">
+                        <input type="tel"
+                            oninput="formatPhoneNumber( document.getElementsByName('costumer-sponsor-phone') )"
+                            name="costumer-sponsor-phone" placeholder="DDD e número">
                     </div>
 
                 </div>

@@ -1,0 +1,109 @@
+*{
+    margin: 0;
+}
+
+body{
+    box-sizing: border-box;
+    width: 100%;
+    background-color: #574b90;
+}
+
+header{
+    text-align: center;
+    background-color: #f2f2f2;
+    box-shadow: 0 1px 5px rgb(182 182 182 / 30%);
+}
+
+header nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header nav img{
+    height: 80px;
+    width: 150px;
+}
+
+header nav a{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    text-decoration: none;
+    color: #574b90;
+    padding: 0.5rem;
+    border-radius: 1rem;
+    transition: .5s;
+}
+
+header nav a:hover{
+    background-color: #574b90;
+    color: white;
+}
+
+header nav .links{
+    display: flex;
+    justify-content: space-evenly;
+    width: 50rem;
+}
+
+main section{
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+main section #datatable{
+    display: table;
+    background-color: #f2f2f2;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    text-align: center;
+    padding: 1rem;
+    border-spacing: 0 0.5rem;
+    border-radius: 1rem;
+}
+
+main section #datatable th{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    padding: 1rem;
+    color: black;
+}
+
+main section #datatable tbody tr{
+    background-color: whitesmoke;
+    color: black;
+    opacity: 0.8;
+    font-weight: 600;
+}
+
+main section #datatable tbody tr:hover{
+    background-color: lightgreen;
+    opacity: 1;
+}
+
+main section #datatable td{
+    padding: 1rem;
+}
+
+footer{
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #f2f2f2;
+    text-align: center;
+    box-shadow: 0 1px 5px rgb(182 182 182 / 30%);
+    margin-top: 1rem;
+    border-radius: 1rem;
+    width: 25%;
+}
+
+footer span{
+    color: black;
+}
+
+footer div{
+    display: flex;
+    justify-content: space-evenly;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+}
