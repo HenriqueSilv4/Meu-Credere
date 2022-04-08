@@ -258,28 +258,61 @@ main section #formulario-cliente button:hover{
 }
 
 footer{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    max-width:  400px;
     background-color: #f2f2f2;
     text-align: center;
-    box-shadow: 0 1px 5px rgb(182 182 182 / 30%);
-    border-radius: 1rem;
-    width: 25%;
-}
-
-footer span{
+    margin-top: 1rem;
+    border-radius: 0.5rem;
     color: black;
 }
 
 footer div{
     display: flex;
     justify-content: space-evenly;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 400;
 }
 
 .hide{
     display: none;
+}
+
+@media (max-width: 700px)
+{
+    footer div{
+        display: flex;
+        flex-direction: column;
+        background-color: #f2f2f2;
+        border-radius: 0.5rem;
+        text-align: center;
+    }
+}
+
+@media (max-width: 450px)
+{
+
+    header nav{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    header .links{
+        margin-bottom: 1rem;
+    }
+
+    main section #formulario-cliente{
+        max-width: -webkit-fill-available;
+        padding: 0%;
+    }
+
+    footer div{
+        display: flex;
+        flex-direction: column;
+        background-color: #f2f2f2;
+        border-radius: 0.5rem;
+        text-align: center;
+    }
+    
 }

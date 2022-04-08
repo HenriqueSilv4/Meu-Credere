@@ -50,7 +50,7 @@
                 <div class="name-field">
 
                     <label for="costumer-name">Nome Completo</label>
-                    <input type="text" name="costumer-name" required>
+                    <input type="text" name="costumer-name" autocomplete="off" required>
 
                 </div>
 
@@ -64,7 +64,7 @@
 
                     <div>
 
-                        <input type="date" id='birth-field' name="costumer-birth" min="1900-01-01" required>
+                        <input type="date" id='birth-field' name="costumer-birth" min="1900-01-01"  autocomplete="off" required>
 
                     </div>
 
@@ -74,13 +74,13 @@
 
                     <div>
                         <label for="costumer-driver-license-number">Carteira de Motorista</label>
-                        <input oninput="showCityField()" id="driverLicense-input" type="text"
+                        <input oninput="showCityField()" id="driverLicense-input" autocomplete="off" type="text"
                             name="costumer-driver-license-number" placeholder="Número da carteira">
                     </div>
 
                     <div>
                         <label for="costumer-driver-license-date">Data de emissão</label>
-                        <input type="date" name="costumer-driver-license-date">
+                        <input type="date" name="costumer-driver-license-date" autocomplete="off">
                     </div>
 
                 </div>
@@ -134,7 +134,7 @@
                             <label for="costumer-city">Cidade</label>
                         </div>
 
-                        <input type="text" name="costumer-city">
+                        <input type="text" name="costumer-city" autocomplete="off">
 
                     </div>
 
@@ -147,14 +147,14 @@
                         <tr>
                             <th>Telefone</th>
                             <th>Telefone Principal</th>
-                            <th>Modificar</th>
+                            <th></th>
                         </tr>
 
                         <tr id="phone-number-1">
                             <td>
                                 <input type="tel"
                                     oninput="formatPhoneNumber( document.getElementsByName('costumer-phone-1') )"
-                                    name="costumer-phone-1" placeholder="DDD e número" required>
+                                    name="costumer-phone-1" placeholder="DDD e número" autocomplete="off" required>
                             </td>
 
                             <td>
@@ -208,7 +208,7 @@
                             <td>
                                 <input type="tel"
                                     oninput="formatPhoneNumber( document.getElementsByName('costumer-phone-4') )"
-                                    name="costumer-phone-4" placeholder="DDD e número">
+                                    name="costumer-phone-4" placeholder="DDD e número" autocomplete="off">
                             </td>
 
                             <td>
@@ -232,13 +232,13 @@
 
                         <tr>
                             <th>Email</th>
-                            <th>Modificar</th>
+                            <th></th>
                         </tr>
 
                         <tr class='show' id="email-1">
 
                             <td>
-                                <input type="email" name="costumer-email-1" placeholder="exemplo@gmail.com" required>
+                                <input type="email" name="costumer-email-1" placeholder="exemplo@gmail.com" autocomplete="off" required>
                             </td>
 
                             <td>
@@ -251,7 +251,7 @@
                         <tr class='hide' id="email-2">
 
                             <td>
-                                <input type="email" name="costumer-email-2" placeholder="exemplo@gmail.com">
+                                <input type="email" name="costumer-email-2" placeholder="exemplo@gmail.com" autocomplete="off">
                             </td>
 
                             <td>
@@ -264,7 +264,7 @@
                         <tr class='hide' id="email-3">
 
                             <td>
-                                <input type="tel" name="costumer-email-3" placeholder="exemplo@gmail.com">
+                                <input type="tel" name="costumer-email-3" placeholder="exemplo@gmail.com" autocomplete="off">
                             </td>
 
                             <td>
@@ -286,7 +286,7 @@
                         <label for="costumer-sponsor-name">Nome do responsável</label>
                     </div>
 
-                    <input type="text" name="costumer-sponsor-name">
+                    <input type="text" name="costumer-sponsor-name" autocomplete="off">
 
                     <div>
                         <label for="costumer-sponsor-phone">Telefone do responsável</label>
@@ -295,7 +295,7 @@
                     <div>
                         <input type="tel"
                             oninput="formatPhoneNumber( document.getElementsByName('costumer-sponsor-phone') )"
-                            name="costumer-sponsor-phone" placeholder="DDD e número">
+                            name="costumer-sponsor-phone" placeholder="DDD e número" autocomplete="off">
                     </div>
 
                 </div>
