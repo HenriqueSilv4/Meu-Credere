@@ -3,9 +3,10 @@ fetch("newspaper.json").then(response => response.json()).then(data => {
     data.forEach( function (value, index, arr) {
 
         DesignBox = [
-            "text-right",
-            "text-left",
-            "text-bottom"
+            "text-style-one",
+            "text-style-two",
+            "text-style-three",
+            "text-style-four"
         ];
 
         design = Math.random(DesignBox)
@@ -17,7 +18,9 @@ fetch("newspaper.json").then(response => response.json()).then(data => {
 
         index===0 ? div_slider.classList.add('show') : div_slider.classList.add('hide')
 
-        div_text.classList.add( DesignBox[Math.floor(Math.random() * DesignBox.length)] )
+        div_text.classList.add( 'text-style-four' )
+
+        //div_text.classList.add( DesignBox[Math.floor(Math.random() * DesignBox.length)] )
 
         const titulo = document.createElement("h1")
         titulo.innerHTML = data[index].titulo
@@ -48,8 +51,6 @@ fetch("newspaper.json").then(response => response.json()).then(data => {
 
 function nextSlide(){
 
-    document.getElementById('buttonNext').classList.toggle = "buttonActive"
-
     loadedSlides = document.getElementsByClassName('slide')
 
     for (let i = 0; i < loadedSlides.length; i++) {
@@ -73,5 +74,3 @@ function nextSlide(){
     };
 
 }
-
-// [X] A leitura de cada slide deve ser obrigatoria , Criar um timer 

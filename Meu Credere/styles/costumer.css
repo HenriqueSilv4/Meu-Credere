@@ -32,7 +32,7 @@ header nav a{
     color: #574b90;
     padding: 0.5rem;
     border-radius: 1rem;
-    transition: .5s;
+    transition: all 0.5s;
 }
 
 header nav a:hover{
@@ -96,6 +96,7 @@ footer{
     background-color: #f2f2f2;
     text-align: center;
     margin-top: 1rem;
+    margin-bottom: 1rem;
     border-radius: 0.5rem;
     color: black;
 }
@@ -105,35 +106,35 @@ footer div{
     justify-content: space-evenly;
 }
 
-@media (max-width: 700px)
-{
-    footer div{
-        display: flex;
-        flex-direction: column;
-        background-color: #f2f2f2;
-        border-radius: 0.5rem;
-        text-align: center;
-    }
-}
 
-@media (max-width: 450px)
+@media (max-width: 800px)
 {
 
     header nav{
-        display: flex;
         flex-wrap: wrap;
+        height: 100px;
     }
 
-    header .links{
-        margin-bottom: 1rem;
+    header nav img{
+        width: 75px;
+        height: 40px;
+    }
+
+}
+
+@media (max-width: 400px)
+{
+
+    header nav{
+        height: 90px;
+    }
+
+    footer{
+        max-width: 320px;
     }
 
     footer div{
-        display: flex;
         flex-direction: column;
-        background-color: #f2f2f2;
-        border-radius: 0.5rem;
-        text-align: center;
     }
-    
+
 }

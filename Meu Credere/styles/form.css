@@ -32,7 +32,7 @@ header nav a{
     color: #574b90;
     padding: 0.5rem;
     border-radius: 1rem;
-    transition: all 2s;
+    transition: all 0.5s;
 }
 
 header nav a:hover{
@@ -150,7 +150,6 @@ main section #formulario-cliente .city-field input{
 .license-field.show{
     display: flex;
     text-align: center;
-    transition: all 5s ease;
 }
 
 main section #formulario-cliente .license-field input{
@@ -188,11 +187,6 @@ main section #formulario-cliente .phone-field input{
     text-align: center;
 }
 
-#phone-number-2, #phone-number-3 , #phone-number-4{
-    opacity: 1;
-    transition: all .5s;
-}
-
 main section #formulario-cliente .email-field{
     display: grid;
     text-align: center;
@@ -214,8 +208,8 @@ main section #formulario-cliente .email-field input{
 }
 
 .costumer-sponsor.show{
-    display: grid;
     text-align: center;
+    background-color: transparent;
 }
 
 main section #formulario-cliente .costumer-sponsor input{
@@ -244,7 +238,7 @@ main section #formulario-cliente button{
     border: 1px solid #574b90;;
     border-radius: 0.5rem;
     text-align: center;
-    transition: .5s;
+    transition: all 1s;
 }
 
 main section #formulario-cliente div{
@@ -266,6 +260,7 @@ footer{
     background-color: #f2f2f2;
     text-align: center;
     margin-top: 1rem;
+    margin-bottom: 0.5rem;
     border-radius: 0.5rem;
     color: black;
 }
@@ -275,44 +270,62 @@ footer div{
     justify-content: space-evenly;
 }
 
+.show{
+    transition: background-color 1000ms linear;
+    opacity: 1;
+    background-color: transparent;
+}
+
 .hide{
-    display: none;
+    background-color: greenyellow;
+    position: fixed;
+    opacity: 0;
+    top: -1000px;
 }
 
-@media (max-width: 700px)
-{
-    footer div{
-        display: flex;
-        flex-direction: column;
-        background-color: #f2f2f2;
-        border-radius: 0.5rem;
-        text-align: center;
-    }
-}
-
-@media (max-width: 450px)
+@media (max-width: 800px)
 {
 
     header nav{
-        display: flex;
         flex-wrap: wrap;
+        height: 100px;
     }
 
-    header .links{
-        margin-bottom: 1rem;
+    header nav img{
+        width: 75px;
+        height: 40px;
+    }
+
+}
+
+@media (max-width: 400px)
+{
+
+    header nav{
+        height: 90px;
     }
 
     main section #formulario-cliente{
         max-width: -webkit-fill-available;
         padding: 0%;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+
+    footer{
+        max-width: 320px;
     }
 
     footer div{
-        display: flex;
         flex-direction: column;
-        background-color: #f2f2f2;
-        border-radius: 0.5rem;
-        text-align: center;
+    }
+
+}
+
+@media (max-width: 320px)
+{
+    main section #formulario-cliente{
+        margin: 0;
     }
     
 }
