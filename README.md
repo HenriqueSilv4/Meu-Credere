@@ -7,6 +7,14 @@ Nossa aba de Clientes carrega todas as informações cadastradas pelo formulári
 
 Cada linha de código foi revisada e dada atenção a pequenos detalhes para melhorar a experiência do usuário final.
 
+# Como rodar
+
 Nosso aplicativo está no ar na plataforma Netlify -> www.meucredere.netlify.app
+
+# Wiki
+
+A wiki do nosso app também está disponível aqui no github em -> www.github.com/HenriqueSilv4/Meu-Credere/wiki
+
+# Preview
 
 ![front](https://user-images.githubusercontent.com/99505665/162671845-8db7c311-66f5-4e5e-bdba-38d2d565839e.png)
