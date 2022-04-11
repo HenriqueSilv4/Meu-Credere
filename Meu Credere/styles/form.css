@@ -40,6 +40,12 @@ header nav a:hover{
     color: white;
 }
 
+header nav a:focus{
+    outline: none;
+    background-color: #574b90;
+    color: white;
+}
+
 header nav .links{
     display: flex;
     justify-content: space-evenly;
@@ -238,7 +244,7 @@ main section #formulario-cliente button{
     border: 1px solid #574b90;;
     border-radius: 0.5rem;
     text-align: center;
-    transition: all 1s;
+    transition: all 0.5s;
 }
 
 main section #formulario-cliente div{
@@ -246,6 +252,13 @@ main section #formulario-cliente div{
 }
 
 main section #formulario-cliente button:hover{
+    cursor: pointer;
+    background-color: rgb(45, 255, 45);
+    color: black;
+}
+
+main section #formulario-cliente button:focus{
+    outline: none;
     cursor: pointer;
     background-color: rgb(45, 255, 45);
     color: black;
@@ -277,7 +290,7 @@ footer div{
 }
 
 .hide{
-    background-color: greenyellow;
+    background-color: rgb(36, 203, 36);
     position: fixed;
     opacity: 0;
     top: -1000px;

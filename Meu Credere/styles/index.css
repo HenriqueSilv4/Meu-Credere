@@ -40,6 +40,12 @@ header nav a:hover{
     color: white;
 }
 
+header nav a:focus{
+    background-color: #574b90;
+    color: white;
+    outline: none;
+}
+
 header nav .links{
     display: flex;
     justify-content: space-evenly;
@@ -101,6 +107,12 @@ footer div{
 .slide-container button:hover{
     cursor: pointer;
     border-bottom: 5px solid red;
+}
+
+.slide-container button:focus{
+    cursor: pointer;
+    border-bottom: 5px solid red;
+    outline: none;
 }
 
 .slide-container button:active{
@@ -170,6 +182,14 @@ footer div{
     color: white;
 }
 
+.buttonshow{
+    display: block;
+}
+
+.buttonhide{
+    display: none;
+}
+
 .title-text{
     font-size: 36px;
     font-weight: 800;
@@ -186,6 +206,25 @@ footer div{
     margin-top: 0.5rem;
     font-size: 16px;
     font-weight: 400;
+}
+
+.loadingBarBackground{
+    margin-top: 0.2rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+    height: 2px;
+    border-radius: 0.5rem;
+    background-color: rgba(35, 35, 35, 0.8)
+}
+
+.loadingBarProgress{
+    transition: width 10000ms;
+    max-width: 200px;
+    width: 0%;
+    height: 2px;
+    border-radius: 0.5rem;
+    background-color: rgba(223, 218, 218, 0.8)
 }
 
 @media (max-width: 800px)
@@ -230,10 +269,16 @@ footer div{
         border-bottom: 2.5px solid red;
     }
 
+    .slide-container button:focus{
+        cursor: pointer;
+        border-bottom: 2.5px solid red;
+        outline: none;
+    }
+
     .slide-container button:active{
         border-style: none;
     }
-    
+
     .text-style-two{
         bottom: 30px;
         left: 15px;
@@ -313,10 +358,21 @@ footer div{
         height: 180px;
     }
 
+    .text-style-two{
+        bottom: 30px;
+        left: 15px;
+        width: 230px;
+    }
+
     .text-style-four{
         padding: 0.5rem 0 0 1.5rem;
         width: calc(100% - 1.5rem);
         height: calc(100% - 0.5rem);
+    }
+
+    .text-style-four .title-text{
+        position: absolute;
+        top: 25px;
     }
     
     .text-style-four .text{

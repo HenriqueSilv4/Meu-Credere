@@ -2,15 +2,6 @@ fetch("newspaper.json").then(response => response.json()).then(data => {
 
     data.forEach( function (value, index, arr) {
 
-        DesignBox = [
-            "text-style-one",
-            "text-style-two",
-            "text-style-three",
-            "text-style-four"
-        ];
-
-        design = Math.random(DesignBox)
-
         const div_slider = document.createElement("div")
         const div_text = document.createElement("div")
     
@@ -18,10 +9,8 @@ fetch("newspaper.json").then(response => response.json()).then(data => {
 
         index===0 ? div_slider.classList.add('show') : div_slider.classList.add('hide')
 
-        div_text.classList.add( 'text-style-four' )
-
-        //div_text.classList.add( DesignBox[Math.floor(Math.random() * DesignBox.length)] )
-
+        div_text.classList.add(data[index].estilo)
+        
         const titulo = document.createElement("h1")
         titulo.innerHTML = data[index].titulo
         titulo.classList.toggle('title-text')
@@ -49,9 +38,30 @@ fetch("newspaper.json").then(response => response.json()).then(data => {
 
 })
 
+var divID = document.getElementsByClassName('loadingBarProgress')
+divID[0].style.width = "100%";
+
+setTimeout( () => {
+    document.getElementById('buttonSlide').classList.replace('buttonhide','buttonshow')
+    divID[0].style.transition = 'none';
+    divID[0].style.width = '0%';
+},
+10000);
+
 function nextSlide(){
 
     loadedSlides = document.getElementsByClassName('slide')
+    document.getElementById('buttonSlide').classList.replace('buttonshow','buttonhide')
+
+    divID[0].style.transition = 'width 10000ms';
+    divID[0].style.width = '100%';
+
+    setTimeout( () => {
+        document.getElementById('buttonSlide').classList.replace('buttonhide','buttonshow')
+        divID[0].style.transition = 'none';
+        divID[0].style.width = '0%';
+    },
+    10000);
 
     for (let i = 0; i < loadedSlides.length; i++) {
 

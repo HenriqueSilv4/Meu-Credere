@@ -4,27 +4,31 @@
         "titulo": "LOREM IPSUM?",
         "descricao": "Simply dummy text of the printing and typesetting industry",
         "noticia": "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when a unknown printer took a gallery of type and scrambled it.",
-        "background": "https://images.unsplash.com/photo-1478760329108-5c3ed9d495a0"
+        "background": "https://images.unsplash.com/photo-1648737154448-ccf0cafae1c2",
+        "estilo":  "text-style-one"
     },
 
     {
         "titulo": "WHY DO WE USE IT?",
         "descricao": "",
         "noticia": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
-        "background": "https://images.unsplash.com/photo-1439792675105-701e6a4ab6f0"
+        "background": "https://images.unsplash.com/photo-1439792675105-701e6a4ab6f0",
+        "estilo":  "text-style-two"
     },
 
     {
         "titulo": "WHERE DOES IT COME FROM?",
         "descricao": "",
         "noticia": "Contrary to popular belief, Lorem Ipsum is not a random text.",
-        "background": "https://images.unsplash.com/photo-1460355976672-71c3f0a4bdac"
+        "background": "https://images.unsplash.com/photo-1460355976672-71c3f0a4bdac",
+        "estilo":  "text-style-three"
     },
 
     {
         "titulo": "WHERE CAN I GET SOME?",
         "descricao": "",
         "noticia": "There are many variations of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slighly believable. The Generated Lorem Ipsum is therefore always free from repetition.",
-        "background": "https://images.unsplash.com/photo-1479267658415-ff274a213280"
+        "background": "https://images.unsplash.com/photo-1649437402122-4c8d31eddedd",
+        "estilo":  "text-style-four"
     }
 ]

@@ -40,6 +40,12 @@ header nav a:hover{
     color: white;
 }
 
+header nav a:focus{
+    outline: none;
+    background-color: #574b90;
+    color: white;
+}
+
 header nav .links{
     display: flex;
     justify-content: space-evenly;
