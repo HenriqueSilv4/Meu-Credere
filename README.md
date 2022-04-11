@@ -9,7 +9,7 @@ Cada linha de código foi revisada e dada atenção a pequenos detalhes para mel
 
 # Como rodar
 
-Nosso aplicativo está no ar na plataforma Netlify -> www.meucredere.netlify.app
+Nosso aplicativo está no ar na plataforma Netlify -> https://meucredere.netlify.app/
 
 # Wiki
 
