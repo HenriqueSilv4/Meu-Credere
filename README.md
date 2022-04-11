@@ -7,6 +7,6 @@ Nossa aba de Clientes carrega todas as informações cadastradas pelo formulári
 
 Cada linha de código foi revisada e dada atenção a pequenos detalhes para melhorar a experiência do usuário final.
 
-Para rodar nossa aplicação basta abrir qualquer HTML do diretório via live server no Visual Studio ou abrir pelo proprio navegador.
+Para rodar nossa aplicação basta abrir qualquer HTML do diretório via live server no Visual Studio.
 
 ![front](https://user-images.githubusercontent.com/99505665/162671845-8db7c311-66f5-4e5e-bdba-38d2d565839e.png)
