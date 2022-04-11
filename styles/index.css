@@ -1,0 +1,425 @@
+*{
+    margin: 0;
+}
+
+body{
+    box-sizing: border-box;
+    width: 100%;
+    background-color: #574b90;
+}
+
+header{
+    text-align: center;
+    background-color: #f2f2f2;
+    box-shadow: 0 1px 5px rgb(182 182 182 / 30%);
+}
+
+header nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header nav img{
+    height: 80px;
+    width: 150px;
+}
+
+header nav a{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    text-decoration: none;
+    color: #574b90;
+    padding: 0.5rem;
+    border-radius: 1rem;
+    transition: all 0.5s;
+}
+
+header nav a:hover{
+    background-color: #574b90;
+    color: white;
+}
+
+header nav a:focus{
+    background-color: #574b90;
+    color: white;
+    outline: none;
+}
+
+header nav .links{
+    display: flex;
+    justify-content: space-evenly;
+    width: 50rem;
+}
+
+main section{
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+footer{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    margin-left: auto;
+    margin-right: auto;
+    max-width:  400px;
+    background-color: #f2f2f2;
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    border-radius: 0.5rem;
+    color: black;
+}
+
+footer div{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.slide-container{
+    position: relative;
+    width: 800px;
+    height: 400px;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 5px rgba(186, 175, 175, 0.8);
+}
+
+.slide-container button{
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    padding: 0.5rem;
+    width: 100px;
+    background-color: orangered;
+    color: white;
+    border-top: transparent;
+    border-left: transparent;
+    border-right: transparent;
+    border-bottom: 3px solid red;
+    border-radius: 0.25rem;
+    z-index: 999;
+}
+
+.slide-container button:hover{
+    cursor: pointer;
+    border-bottom: 5px solid red;
+}
+
+.slide-container button:focus{
+    cursor: pointer;
+    border-bottom: 5px solid red;
+    outline: none;
+}
+
+.slide-container button:active{
+    border-style: none;
+}
+
+.text-style-one{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 0 0.2rem 0.2rem 0;
+    margin-left: 30%;
+    color: black;
+    text-align: left;
+    padding: 1rem;
+    height: calc(100% - 2rem);
+}
+
+.text-style-two{
+    position: absolute;
+    bottom: 50px;
+    left: 25px;
+    width: 600px;
+}
+
+.text-style-three{
+    position: absolute;
+    text-align: end;
+    right: 25px;
+    top: 100px;
+}
+
+.text-style-four{
+    display: flex;
+    flex-direction: column;
+    padding: 5rem 0 0 3rem;
+    width: calc(100% - 3rem);
+    height: calc(100% - 5rem);
+    background: linear-gradient(180deg, transparent 50%, white 50%);
+    border-radius: 0 0 0.2rem 0.2rem;
+}
+
+.text-style-four .title-text{
+    width: 600px;
+}
+
+.text-style-four .title-description{
+    width: 600px;
+}
+
+.text-style-four .text{
+    position: absolute;
+    top: 220px;
+    width: 600px;
+    color:black;
+}
+
+.text-style-four .title-description{
+    color: gray;
+}
+
+.hide{
+    display: none;
+    opacity: 0;
+}
+
+.show{
+    font-family: 'Poppins', sans-serif;
+    display: block;
+    width: inherit;
+    height: inherit;
+    border-radius: 0.25rem 0.25rem 0.25rem 0.25rem;
+    color: white;
+    animation-name: slider;
+    animation-duration: 1s;
+}
+
+@keyframes slider {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+.buttonshow{
+    display: block;
+}
+
+.buttonhide{
+    display: none;
+}
+
+.title-text{
+    font-size: 36px;
+    font-weight: 800;
+    text-transform: capitalize;
+
+}
+
+.title-description{
+    font-weight: 400;
+    color: gray;
+}
+
+.text{
+    margin-top: 0.5rem;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.loadingBarBackground{
+    margin-top: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+    height: 3px;
+    border-radius: 0.5rem;
+    background-color: rgba(35, 35, 35, 0.8)
+}
+
+.loadingBarProgress{
+    transition: width 10000ms;
+    max-width: 200px;
+    width: 0%;
+    height: 3px;
+    border-radius: 0.5rem;
+    background-color: rgba(223, 218, 218, 0.8)
+}
+
+@media (max-width: 800px)
+{
+
+    header nav{
+        flex-wrap: wrap;
+        height: 100px;
+    }
+
+    header nav img{
+        width: 75px;
+        height: 40px;
+    }
+
+    .slide-container{
+        width: 400px;
+        height: 200px;
+    }
+
+    .title-text{
+        font-size: 18px;
+    }
+    
+    .title-description{
+        font-size: 12px;
+    }
+    
+    .text{
+        font-size: 8px;
+    }
+
+    .slide-container button{
+        padding: 0.25rem;
+        font-size: 9px;
+        width: 50px;
+        border-bottom: 1.5px solid red;
+    }
+
+    .slide-container button:hover{
+        cursor: pointer;
+        border-bottom: 2.5px solid red;
+    }
+
+    .slide-container button:focus{
+        cursor: pointer;
+        border-bottom: 2.5px solid red;
+        outline: none;
+    }
+
+    .slide-container button:active{
+        border-style: none;
+    }
+
+    .text-style-two{
+        bottom: 30px;
+        left: 15px;
+        width: 300px;
+    }
+
+    .text-style-three{
+        right: 15px;
+        top: 50px;
+    }
+
+    .text-style-four{
+        padding: 2rem 0 0 1.5rem;
+        width: calc(100% - 1.5rem);
+        height: calc(100% - 2rem);
+    }
+    
+    .text-style-four .text{
+        position: absolute;
+        top: 100px;
+        width: 300px;
+        color:black;
+    }
+
+    .text-style-four .title-text{
+        width: 350px;
+    }
+    
+    .text-style-four .title-description{
+        width: 350px;
+    }
+
+}
+
+@media (max-width: 400px)
+{
+
+    header nav{
+        height: 90px;
+    }
+
+    .slide-container{
+        width: 350px;
+        height: 200px;
+    }
+
+    footer{
+        max-width: 320px;
+    }
+
+    footer div{
+        flex-direction: column;
+    }
+
+    .text-style-two{
+        bottom: 30px;
+        left: 15px;
+        width: 250px;
+    }
+
+    .text-style-three{
+        top: 25px;
+    }
+
+    .text-style-four{
+        padding: 1.5rem 0 0 1.5rem;
+        width: calc(100% - 1.5rem);
+        height: calc(100% - 1.5rem);
+    }
+    
+    .text-style-four .text{
+        position: absolute;
+        top: 100px;
+        width: 260px;
+        color:black;
+    }
+
+    .text-style-four .title-text{
+        width: 280px;
+    }
+    
+    .text-style-four .title-description{
+        width: 280px;
+    }
+
+}
+
+@media (max-width: 350px)
+{
+    .slide-container{
+        width: 300px;
+        height: 180px;
+    }
+
+    .text-style-two{
+        bottom: 30px;
+        left: 15px;
+        width: 230px;
+    }
+
+    .text-style-four{
+        padding: 0.5rem 0 0 1.5rem;
+        width: calc(100% - 1.5rem);
+        height: calc(100% - 0.5rem);
+    }
+
+    .text-style-four .title-text{
+        position: absolute;
+        top: 25px;
+    }
+
+    .text-style-four .title-description{
+        position: absolute;
+        top: 50px;
+    }
+    
+    .text-style-four .text{
+        position: absolute;
+        top: 90px;
+        width: 200px;
+        color:black;
+    }
+
+    .text-style-four .title-text{
+        width: 250px;
+    }
+    
+    .text-style-four .title-description{
+        width: 250px;
+    }
+}

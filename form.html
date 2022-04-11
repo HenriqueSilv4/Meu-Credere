@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./styles/form.css" media="screen">
+    <link rel="icon" href="/assets/icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <title>Meu Credere | Cadastrar Cliente</title>
+
+    <script defer src="./scripts/form.js"></script>
+
+</head>
+
+<body>
+
+    <header>
+
+        <nav>
+
+            <div class="logo">
+                <img src="/assets/logo.svg" alt="Logotipo Credere">
+            </div>
+
+            <div class="links">
+                <a href="/index.html">Início</a>
+                <a href="/form.html">Cadastrar Cliente</a>
+                <a href="/costumer.html">Clientes</a>
+            </div>
+
+        </nav>
+
+    </header>
+
+    <main>
+
+        <section>
+
+            <form id="formulario-cliente" onsubmit="createCostumerProfile(event)">
+
+                <h1>Cadastrar Cliente</h1>
+
+                <div class="name-field">
+
+                    <label for="costumer-name">Nome Completo</label>
+                    <input type="text" name="costumer-name" autocomplete="off" required>
+
+                </div>
+
+                <div class="birth-date-field" onchange="getAge()">
+
+                    <div>
+
+                        <label for="costumer-birth">Data de nascimento</label>
+
+                    </div>
+
+                    <div>
+
+                        <input type="date" id='birth-field' name="costumer-birth" min="1900-01-01"  autocomplete="off" required>
+
+                    </div>
+
+                </div>
+
+                <div class="license-field hide" id='license-field-id'>
+
+                    <div>
+                        <label for="costumer-driver-license-number">Carteira de Motorista</label>
+                        <input oninput="showCityField()" id="driverLicense-input" autocomplete="off" type="text"
+                            name="costumer-driver-license-number" placeholder="Número da carteira">
+                    </div>
+
+                    <div>
+                        <label for="costumer-driver-license-date">Data de emissão</label>
+                        <input type="date" name="costumer-driver-license-date" autocomplete="off">
+                    </div>
+
+                </div>
+
+                <div class="city-field">
+
+                    <div>
+
+                        <div>
+                            <label for="costumer-state">Estado</label>
+                        </div>
+
+                        <select onchange="showCityField()" id="select-state" name="costumer-state" required>
+
+                            <option value="" disabled selected>Selecione o estado</option>
+                            <option value="RN">Rio Grande do Norte</option>
+                            <option value="AC">Acre</option>
+                            <option value="AL">Alagoas</option>
+                            <option value="AP">Amapá</option>
+                            <option value="AM">Amazonas</option>
+                            <option value="BA">Bahia</option>
+                            <option value="CE">Ceará</option>
+                            <option value="DF">Distrito Federal</option>
+                            <option value="ES">Espírito Santo</option>
+                            <option value="GO">Goiás</option>
+                            <option value="MA">Maranhão</option>
+                            <option value="MT">Mato Grosso</option>
+                            <option value="MS">Mato Grosso do Sul</option>
+                            <option value="MG">Minas Gerais</option>
+                            <option value="PA">Pará</option>
+                            <option value="PB">Paraíba</option>
+                            <option value="PR">Paraná</option>
+                            <option value="PE">Pernambuco</option>
+                            <option value="PI">Piauí</option>
+                            <option value="RJ">Rio de Janeiro</option>
+                            <option value="RS">Rio Grande do Sul</option>
+                            <option value="RO">Rondônia</option>
+                            <option value="RR">Roraima</option>
+                            <option value="SC">Santa Catarina</option>
+                            <option value="SP">São Paulo</option>
+                            <option value="SE">Sergipe</option>
+                            <option value="TO">Tocantins</option>
+
+                        </select>
+
+                    </div>
+
+                    <div class='hide' id="costumer-city-field">
+
+                        <div>
+                            <label for="costumer-city">Cidade</label>
+                        </div>
+
+                        <input type="text" name="costumer-city" autocomplete="off">
+
+                    </div>
+
+                </div>
+
+                <div class="phone-field">
+
+                    <table>
+
+                        <tr>
+                            <th>Telefone</th>
+                            <th>Telefone Principal</th>
+                            <th></th>
+                        </tr>
+
+                        <tr id="phone-number-1">
+                            <td>
+                                <input type="tel"
+                                    oninput="formatPhoneNumber( document.getElementsByName('costumer-phone-1') )"
+                                    name="costumer-phone-1" placeholder="DDD e número" autocomplete="off" required>
+                            </td>
+
+                            <td>
+                                <input type="checkbox" onclick="checkPhoneBox(1)" id="important-number-1" checked>
+                            </td>
+
+                            <td>
+                                <img src="/assets/plus.svg" alt="" width="20" height="20"
+                                    onclick="showMorePhoneFields()">
+                            </td>
+                        </tr>
+
+                        <tr class='hide' id="phone-number-2">
+                            <td>
+                                <input type="tel"
+                                    oninput="formatPhoneNumber( document.getElementsByName('costumer-phone-2') )"
+                                    name="costumer-phone-2" placeholder="DDD e número">
+                            </td>
+
+                            <td>
+                                <input type="checkbox" onclick="checkPhoneBox(2)" id="important-number-2">
+                            </td>
+
+                            <td>
+                                <img src="/assets/minus.svg" alt="" width="20" height="20"
+                                    onclick="removePhoneFields(2)">
+                            </td>
+                        </tr>
+
+                        <tr class='hide' id="phone-number-3">
+
+                            <td>
+                                <input type="tel"
+                                    oninput="formatPhoneNumber( document.getElementsByName('costumer-phone-3') )"
+                                    name="costumer-phone-3" placeholder="DDD e número">
+                            </td>
+
+                            <td>
+                                <input type="checkbox" onclick="checkPhoneBox(3)" id="important-number-3">
+                            </td>
+
+                            <td>
+                                <img src="/assets/minus.svg" alt="" width="20" height="20"
+                                    onclick="removePhoneFields(3)">
+                            </td>
+
+                        </tr>
+
+                        <tr class='hide' id="phone-number-4">
+
+                            <td>
+                                <input type="tel"
+                                    oninput="formatPhoneNumber( document.getElementsByName('costumer-phone-4') )"
+                                    name="costumer-phone-4" placeholder="DDD e número" autocomplete="off">
+                            </td>
+
+                            <td>
+                                <input type="checkbox" onclick="checkPhoneBox(4)" id="important-number-4">
+                            </td>
+
+                            <td>
+                                <img src="/assets/minus.svg" alt="" width="20" height="20"
+                                    onclick="removePhoneFields(4)">
+                            </td>
+
+                        </tr>
+
+                    </table>
+
+                </div>
+
+                <div class="email-field">
+
+                    <table>
+
+                        <tr>
+                            <th>Email</th>
+                            <th></th>
+                        </tr>
+
+                        <tr id="email-1">
+
+                            <td>
+                                <input type="email" name="costumer-email-1" placeholder="exemplo@gmail.com" autocomplete="off" required>
+                            </td>
+
+                            <td>
+                                <img src="/assets/plus.svg" alt="" width="20" foheight="20"
+                                    onclick="showMoreEmailFields()">
+                            </td>
+
+                        </tr>
+
+                        <tr class='hide' id="email-2">
+
+                            <td>
+                                <input type="email" name="costumer-email-2" placeholder="exemplo@gmail.com" autocomplete="off">
+                            </td>
+
+                            <td>
+                                <img src="/assets/minus.svg" alt="" width="20" height="20"
+                                    onclick="removeEmailFields(2)">
+                            </td>
+
+                        </tr>
+
+                        <tr class='hide' id="email-3">
+
+                            <td>
+                                <input type="tel" name="costumer-email-3" placeholder="exemplo@gmail.com" autocomplete="off">
+                            </td>
+
+                            <td>
+                                <img src="/assets/minus.svg" alt="" width="20" height="20"
+                                    onclick="removeEmailFields(3)">
+                            </td>
+
+                        </tr>
+
+                    </table>
+
+                </div>
+
+                <div class="costumer-sponsor hide" id="costumer-sponsor-id">
+
+                    <h4>Responsável</h4>
+
+                    <div>
+                        <label for="costumer-sponsor-name">Nome do responsável</label>
+                    </div>
+
+                    <input type="text" name="costumer-sponsor-name" autocomplete="off">
+
+                    <div>
+                        <label for="costumer-sponsor-phone">Telefone do responsável</label>
+                    </div>
+
+                    <div>
+                        <input type="tel"
+                            oninput="formatPhoneNumber( document.getElementsByName('costumer-sponsor-phone') )"
+                            name="costumer-sponsor-phone" placeholder="DDD e número" autocomplete="off">
+                    </div>
+
+                </div>
+
+                <div class="center">
+                    <button id="button">Salvar Cliente</button>
+                </div>
+
+            </form>
+
+        </section>
+
+    </main>
+
+    <footer>
+
+        <div>
+
+            <span>
+                © 2022 Credere
+            </span>
+            <span>
+                Criado por HenriqueSilv4
+            </span>
+
+
+        </div>
+
+
+    </footer>
+
+</body>
+
+</html>
