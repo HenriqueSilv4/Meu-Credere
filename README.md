@@ -5,7 +5,7 @@
 
 # 💻 Projeto
 
-Esta aplicação tem como objetivo realizar o desafio front-end da empresa Credere.
+Esta aplicação tem como objetivo realizar o desafio front-end da empresa [Credere](https://github.com/meucredere/frontend-test).
 
 O aplicativo final tem um design responsivo em diferentes resoluções, o Slide da página inicial é alimentado por JSON enquanto o formulário da pagina "Cadastrar Cliente" salva dados no armazenamento do navegador.
 Nossa aba de Clientes carrega todas as informações cadastradas pelo formulário.
