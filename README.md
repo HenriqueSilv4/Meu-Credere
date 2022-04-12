@@ -26,7 +26,7 @@ Nosso aplicativo está no ar na plataforma [Netlify](https://meucredere.netlify.
 
 # Wiki
 
-A [wiki](www.github.com/HenriqueSilv4/Meu-Credere/wiki) do nosso app também está disponível.
+A [wiki]() do nosso app também está disponível.
 
 ---
 
