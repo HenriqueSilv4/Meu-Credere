@@ -84,6 +84,7 @@ main section #formulario-cliente{
     border-radius: 0.25rem;
     padding: 1.0rem;
     width: 500px;
+    overflow-x: auto;
 }
 
 main section #formulario-cliente .name-field{
